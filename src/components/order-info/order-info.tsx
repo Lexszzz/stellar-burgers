@@ -4,11 +4,21 @@ import { OrderInfoUI } from '../ui/order-info';
 import { TIngredient } from '@utils-types';
 import { useParams } from 'react-router-dom';
 import { useSelector } from '../../services/store';
+import { useEffect } from 'react';
+import { useDispatch } from '../../services/store';
+import { getFeedsThunk } from '../../services/slices/feedSlice';
 
 export const OrderInfo: FC = () => {
   const { number } = useParams();
 
   const { orders } = useSelector((state) => state.feed);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!orders.length) {
+      dispatch(getFeedsThunk());
+    }
+  }, [dispatch, orders.length]);
 
   const ingredients = useSelector((state) => state.ingredients.ingredients);
 
