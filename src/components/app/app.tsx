@@ -1,12 +1,16 @@
 import '../../index.css';
-import { useNavigate } from 'react-router-dom';
 import styles from './app.module.css';
-import { Preloader } from '@ui';
-import { Routes, Route } from 'react-router-dom';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from '../../services/store';
+import { useDispatch } from '../../services/store';
 import { getIngredientsThunk } from '../../services/slices/ingredientsSlice';
 import { getUserThunk } from '../../services/slices/userSlice';
+import {
+  Routes,
+  Route,
+  useLocation,
+  useNavigate,
+  Location
+} from 'react-router-dom';
 
 import {
   ConstructorPage,
@@ -27,13 +31,15 @@ import {
   OrderInfo,
   ProtectedRoute
 } from '@components';
-//
+
 const App = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const locationState = location.state as {
+    background?: Location;
+  };
+  const background = locationState?.background;
   const dispatch = useDispatch();
-  const { ingredients, isLoading, error } = useSelector(
-    (state) => state.ingredients
-  );
 
   useEffect(() => {
     dispatch(getIngredientsThunk());
@@ -44,7 +50,7 @@ const App = () => {
     <div className={styles.app}>
       <AppHeader />
 
-      <Routes>
+      <Routes location={background || location}>
         <Route path='/' element={<ConstructorPage />} />
 
         <Route path='/feed' element={<Feed />} />
@@ -103,37 +109,54 @@ const App = () => {
           }
         />
 
-        <Route
-          path='/feed/:number'
-          element={
-            <Modal title='' onClose={() => navigate(-1)}>
-              <OrderInfo />
-            </Modal>
-          }
-        />
+        <Route path='/ingredients/:id' element={<IngredientDetails />} />
 
-        <Route
-          path='/ingredients/:id'
-          element={
-            <Modal title='' onClose={() => navigate(-1)}>
-              <IngredientDetails />
-            </Modal>
-          }
-        />
+        <Route path='/feed/:number' element={<OrderInfo />} />
 
         <Route
           path='/profile/orders/:number'
           element={
             <ProtectedRoute>
-              <Modal title='' onClose={() => navigate(-1)}>
-                <OrderInfo />
-              </Modal>
+              <OrderInfo />
             </ProtectedRoute>
           }
         />
 
         <Route path='*' element={<NotFound404 />} />
       </Routes>
+
+      {background && (
+        <Routes>
+          <Route
+            path='/ingredients/:id'
+            element={
+              <Modal title='' onClose={() => navigate(-1)}>
+                <IngredientDetails />
+              </Modal>
+            }
+          />
+
+          <Route
+            path='/feed/:number'
+            element={
+              <Modal title='' onClose={() => navigate(-1)}>
+                <OrderInfo />
+              </Modal>
+            }
+          />
+
+          <Route
+            path='/profile/orders/:number'
+            element={
+              <ProtectedRoute>
+                <Modal title='' onClose={() => navigate(-1)}>
+                  <OrderInfo />
+                </Modal>
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      )}
     </div>
   );
 };

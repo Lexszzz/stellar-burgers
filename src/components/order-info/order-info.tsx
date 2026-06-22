@@ -6,23 +6,29 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from '../../services/store';
 import { useEffect } from 'react';
 import { useDispatch } from '../../services/store';
-import { getFeedsThunk } from '../../services/slices/feedSlice';
+import { getOrderByNumberThunk } from '../../services/slices/feedSlice';
 
 export const OrderInfo: FC = () => {
   const { number } = useParams();
 
-  const { orders } = useSelector((state) => state.feed);
   const dispatch = useDispatch();
 
+  const { orders, currentOrder } = useSelector((state) => state.feed);
+
+  const { orders: profileOrders } = useSelector((state) => state.profileOrders);
+
+  const orderData =
+    orders.find((order) => order.number === Number(number)) ||
+    profileOrders.find((order) => order.number === Number(number)) ||
+    currentOrder;
+
   useEffect(() => {
-    if (!orders.length) {
-      dispatch(getFeedsThunk());
+    if (!orderData && number) {
+      dispatch(getOrderByNumberThunk(Number(number)));
     }
-  }, [dispatch, orders.length]);
+  }, [dispatch, orderData, number]);
 
   const ingredients = useSelector((state) => state.ingredients.ingredients);
-
-  const orderData = orders.find((order) => order.number === Number(number));
 
   /* Готовим данные для отображения */
   const orderInfo = useMemo(() => {

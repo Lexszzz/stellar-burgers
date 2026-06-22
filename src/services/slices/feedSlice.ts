@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getFeedsApi } from '../../utils/burger-api';
 import { TOrder } from '../../utils/types';
+import { getFeedsApi, getOrderByNumberApi } from '../../utils/burger-api';
 
 type TFeedState = {
   orders: TOrder[];
+  currentOrder: TOrder | null;
   total: number;
   totalToday: number;
   isLoading: boolean;
@@ -12,11 +13,21 @@ type TFeedState = {
 
 const initialState: TFeedState = {
   orders: [],
+  currentOrder: null,
   total: 0,
   totalToday: 0,
   isLoading: false,
   error: null
 };
+
+export const getOrderByNumberThunk = createAsyncThunk(
+  'feed/getOrderByNumber',
+  async (number: number) => {
+    const response = await getOrderByNumberApi(number);
+
+    return response.orders[0];
+  }
+);
 
 export const getFeedsThunk = createAsyncThunk('feed/getFeed', getFeedsApi);
 
@@ -42,6 +53,20 @@ const feedSlice = createSlice({
       .addCase(getFeedsThunk.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.error.message || 'Ошибка загрузки';
+      })
+
+      .addCase(getOrderByNumberThunk.pending, (state) => {
+        state.isLoading = true;
+      })
+
+      .addCase(getOrderByNumberThunk.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.currentOrder = action.payload;
+      })
+
+      .addCase(getOrderByNumberThunk.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.error.message || 'Ошибка загрузки заказа';
       });
   }
 });
