@@ -13,12 +13,14 @@ import { TUser } from '../../utils/types';
 type TUserState = {
   user: TUser | null;
   isLoading: boolean;
+  isAuthChecked: boolean;
   error: string | null;
 };
 
 const initialState: TUserState = {
   user: null,
   isLoading: false,
+  isAuthChecked: false,
   error: null
 };
 
@@ -43,7 +45,6 @@ export const logoutUserThunk = createAsyncThunk('user/logout', async () => {
 const userSlice = createSlice({
   name: 'user',
   initialState,
-
   reducers: {},
 
   extraReducers: (builder) => {
@@ -95,11 +96,13 @@ const userSlice = createSlice({
       .addCase(getUserThunk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = action.payload.user;
+        state.isAuthChecked = true;
       })
 
       .addCase(getUserThunk.rejected, (state) => {
         state.isLoading = false;
         state.user = null;
+        state.isAuthChecked = true;
       });
   }
 });
