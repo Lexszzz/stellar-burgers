@@ -4,6 +4,16 @@ const config: Config.InitialOptions = {
   verbose: true,
   testEnvironment: 'jsdom',
 
+  testMatch: [
+    '<rootDir>/src/**/*.test.ts',
+    '<rootDir>/src/**/*.test.tsx'
+  ],
+
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    '<rootDir>/tests/'
+  ],
+
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
