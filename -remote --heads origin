@@ -1,0 +1,32 @@
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Mon Jul 6 12:20:54 2026}: checkout: moving from main to review
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Mon Jul 6 12:19:10 2026}: checkout: moving from review to main
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m refs/heads/review@{Mon Jul 6 12:18:09 2026}: branch: Created from HEAD
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Mon Jul 6 12:18:09 2026}: checkout: moving from main to review
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Mon Jul 6 12:17:57 2026}: checkout: moving from stellar-burger-work to main
+[33mf31f539[m[33m ([m[1;31morigin/stellar-burger-work[m[33m, [m[1;32mstellar-burger-work[m[33m)[m refs/remotes/origin/stellar-burger-work@{Mon Jul 6 12:15:38 2026}: update by push
+[33mf31f539[m[33m ([m[1;31morigin/stellar-burger-work[m[33m, [m[1;32mstellar-burger-work[m[33m)[m refs/heads/stellar-burger-work@{Mon Jul 6 12:15:22 2026}: commit: afterreview fixes
+[33mf31f539[m[33m ([m[1;31morigin/stellar-burger-work[m[33m, [m[1;32mstellar-burger-work[m[33m)[m HEAD@{Mon Jul 6 12:15:22 2026}: commit: afterreview fixes
+[33med35198[m refs/remotes/origin/stellar-burger-work@{Mon Jun 22 16:21:24 2026}: update by push
+[33med35198[m refs/heads/stellar-burger-work@{Mon Jun 22 16:12:37 2026}: commit: Fixing review errors
+[33med35198[m HEAD@{Mon Jun 22 16:12:37 2026}: commit: Fixing review errors
+[33maead43e[m HEAD@{Mon Jun 22 14:20:47 2026}: checkout: moving from main to stellar-burger-work
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m refs/remotes/origin/main@{Sun Jun 21 14:55:54 2026}: update by push
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m refs/heads/main@{Sun Jun 21 14:55:46 2026}: reset: moving to 427e2d2
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Sun Jun 21 14:55:46 2026}: reset: moving to 427e2d2
+[33m07d1587[m HEAD@{Sun Jun 21 14:55:33 2026}: checkout: moving from stellar-burger-work to main
+[33maead43e[m HEAD@{Sun Jun 21 14:52:50 2026}: checkout: moving from stellar-burger-work to stellar-burger-work
+[33maead43e[m refs/remotes/origin/stellar-burger-work@{Sun Jun 21 12:41:16 2026}: update by push
+[33maead43e[m refs/heads/stellar-burger-work@{Sun Jun 21 12:41:08 2026}: commit: Final version ready for review. Switched branches
+[33maead43e[m HEAD@{Sun Jun 21 12:41:08 2026}: commit: Final version ready for review. Switched branches
+[33m07d1587[m refs/remotes/origin/stellar-burger-work@{Sun Jun 21 12:32:27 2026}: update by push
+[33m07d1587[m refs/heads/stellar-burger-work@{Sun Jun 21 12:32:09 2026}: branch: Created from HEAD
+[33m07d1587[m HEAD@{Sun Jun 21 12:32:09 2026}: checkout: moving from main to stellar-burger-work
+[33m07d1587[m refs/remotes/origin/main@{Sun Jun 21 12:27:59 2026}: update by push
+[33m07d1587[m refs/heads/main@{Sun Jun 21 12:27:54 2026}: commit: Final version ready for review
+[33m07d1587[m HEAD@{Sun Jun 21 12:27:54 2026}: commit: Final version ready for review
+[33m5e76d5d[m refs/remotes/origin/main@{Sat Jun 20 19:56:37 2026}: update by push
+[33m5e76d5d[m refs/heads/main@{Sat Jun 20 19:56:28 2026}: commit: Not final version
+[33m5e76d5d[m HEAD@{Sat Jun 20 19:56:28 2026}: commit: Not final version
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m refs/heads/main@{Fri Jun 19 15:28:51 2026}: clone: from https://github.com/Lexszzz/stellar-burgers.git
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m refs/remotes/origin/HEAD@{Fri Jun 19 15:28:51 2026}: clone: from https://github.com/Lexszzz/stellar-burgers.git
+[33m427e2d2[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mreview[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{Fri Jun 19 15:28:51 2026}: clone: from https://github.com/Lexszzz/stellar-burgers.git
