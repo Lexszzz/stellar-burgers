@@ -39,7 +39,6 @@ export const BurgerConstructor: FC = () => {
       ...constructorItems.ingredients.map((item) => item._id),
       constructorItems.bun._id
     ];
-
     dispatch(createOrderThunk(ingredients))
       .unwrap()
       .then(() => {
